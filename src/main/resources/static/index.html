@@ -29,10 +29,20 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
     
-    <body onload="app.init()">
+    <body onmousemove="coordenadas(event);" onload="app.init()">
+        <script type="text/javascript">
+            function coordenadas(event) {
+            x=event.clientX;
+            y=event.clientY;
+            x=document.getElementById("x").value;
+            y=document.getElementById("y").value;
+            }
+        </script>
+        <!--
         X:<input id="x" type="number"/>
         Y:<input id="y" type="number"/>        
         <button onclick="app.publishPoint($('#x').val(),$('#y').val())">Send point</button>
-        <canvas id="canvas" width="800" height="600"></canvas>
+        <canvas id="canvas" width="800" height="600"></canvas-->
+        <canvas id="canvas" width="800" height="600" onclick="app.publishPoint(x,y)" style="border:1px solid #000000; background-color: azure"></canvas>
     </body>
 </html>

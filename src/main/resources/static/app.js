@@ -40,7 +40,7 @@ var app = (function () {
             stompClient.subscribe('/topic/newpoint', function (eventbody) {
                 var theObject=JSON.parse(eventbody.body);
                 addPointToCanvas(new Point(theObject.x,theObject.y));
-                alert("POOM  x:"+theObject.x+" y:" + theObject.y);
+                //alert("POOM  x:"+theObject.x+" y:" + theObject.y);
                 
 
             });
@@ -60,6 +60,7 @@ var app = (function () {
         },
 
         publishPoint: function(px,py){
+            //alert("UNOOOOOOO"+"   X->"+px+"   Y->"+py+"fin");
             var pt=new Point(px,py);
             console.info("publishing point at "+pt);
             addPointToCanvas(pt);

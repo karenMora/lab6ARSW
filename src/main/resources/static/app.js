@@ -63,10 +63,14 @@ var app = (function () {
             //alert("UNOOOOOOO"+"   X->"+px+"   Y->"+py+"fin");
             var pt=new Point(px,py);
             console.info("publishing point at "+pt);
-            addPointToCanvas(pt);
+            //addPointToCanvas(pt);
 
             //publicar el evento
             stompClient.send("/topic/newpoint", {}, JSON.stringify(pt));
+        },
+        
+        connect: function () {
+            
         },
 
         disconnect: function () {

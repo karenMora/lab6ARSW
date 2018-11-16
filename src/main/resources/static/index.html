@@ -26,37 +26,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
         <script src="/app.js"></script>
 
     </head>
-
-    <body onmousemove="coordenadas(event)">
-        <script type="text/javascript">
-            function coordenadas(event) {
-            x=event.clientX;
-            y=event.clientY;
-            //x=document.getElementById("x").value;
-            //y=document.getElementById("y").value;
-            }
-        </script>
-        <!--
-        X:<input id="x" type="number"/>
-        Y:<input id="y" type="number"/>        
-        <button onclick="app.publishPoint($('#x').val(),$('#y').val())">Send point</button>
-        <canvas id="canvas" width="800" height="600"></canvas-->
-        <canvas id="canvas" width="800" height="600" onclick="app.publishPoint(x,y)" style="border:1px solid #000000; background-color: azure"></canvas>
+    <body onload="app.init()">
         <br>
-        points:<input id="points" type="number"/>
-        <button onclick="app.connect()">Send</button>
-        <button onclick="app.init()">Connect</button>
-        
-        <div id="textDiv"> 
-        <script type="text/javascript">  
-            var div = document.getElementById("textDiv");
-            //nombre=(Math.floor(Math.random()));
-            nombre=(Math.random());
-            //alert(nombre);
-            div.textContent = "Nombre: /topic/newpoint."+nombre;  
-            var text = div.textContent;  
-        </script>
-        </div> 
-        
+        id:<input id="iddibujo" type="number"/>
+        <button onclick="app.conectar($('#iddibujo').val())">Connect</button>
+        <canvas id="canvas" width="800" height="600" style="border:1px solid #000000; background-color: azure"></canvas>    
     </body>
 </html>
